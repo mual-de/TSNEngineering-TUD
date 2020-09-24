@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% block scripts %}
+<script src="{{ url_for('static', filename='js/validations.js') }}" type="text/javascript"></script>
+<script src="{{ url_for('static', filename='js/fpga_flowcontrol_configurator.js') }}" type="text/javascript"></script>
+<script src="{{ url_for('static', filename='js/ovs_flowcontrol_configurator.js') }}" type="text/javascript"></script>
+<script src="{{ url_for('static', filename='js/configurator.js') }}" type="text/javascript"></script>
+
+{% endblock %} {% block navigator %}
+<a class="w3-bar-item w3-button" href="/engineering">Configurations</a>
+<a class="w3-bar-item w3-button" href="/engineering/filterRecipe">Filter Recipes</a>
+<a class="w3-bar-item w3-button" href="/engineering/yang">YANG Models</a> {% endblock %} {% block content %}
+<h2>Create new Configuration</h2>
+<div class="conifg-box">
+
+    <div class="configuration-form">
+        <div class="configuration-ctl-btns">
+            <button onclick="addNewSwitch(counter)" class="w3-btn w3-theme-l1">Add Switch</button>
+            <button onclick="storeConfiguration()" class="w3-btn w3-theme-l1">Store Configuration</button>
+        </div>
+        <div id="switch-area">
+            <h3>General Informations:</h3><br>
+            <label for="config-name"><b>Configuration name:</b></label>
+            <input id="config-name" required class="w3-input"><br>
+            <b>Short description</b><br>
+            <textarea rows="3" cols="80" required id="config-desc"></textarea>
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}

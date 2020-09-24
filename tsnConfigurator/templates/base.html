@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .w3-theme-l5 {
+            color: #000 !important;
+            background-color: #e6f1ff !important
+        }
+        
+        .w3-theme-l4 {
+            color: #000 !important;
+            background-color: #aacfff !important
+        }
+        
+        .w3-theme-l3 {
+            color: #fff !important;
+            background-color: #569fff !important
+        }
+        
+        .w3-theme-l2 {
+            color: #fff !important;
+            background-color: #016fff !important
+        }
+        
+        .w3-theme-l1 {
+            color: #fff !important;
+            background-color: #004aab !important
+        }
+        
+        .w3-theme-d1 {
+            color: #fff !important;
+            background-color: #00224e !important
+        }
+        
+        .w3-theme-d2 {
+            color: #fff !important;
+            background-color: #001e45 !important
+        }
+        
+        .w3-theme-d3 {
+            color: #fff !important;
+            background-color: #001a3d !important
+        }
+        
+        .w3-theme-d4 {
+            color: #fff !important;
+            background-color: #001734 !important
+        }
+        
+        .w3-theme-d5 {
+            color: #fff !important;
+            background-color: #00132b !important
+        }
+        
+        .w3-theme-light {
+            color: #000 !important;
+            background-color: #e6f1ff !important
+        }
+        
+        .w3-theme-dark {
+            color: #fff !important;
+            background-color: #00132b !important
+        }
+        
+        .w3-theme-action {
+            color: #fff !important;
+            background-color: #00132b !important
+        }
+        
+        .w3-theme {
+            color: #fff !important;
+            background-color: #002557 !important
+        }
+        
+        .w3-text-theme {
+            color: #002557 !important
+        }
+        
+        .w3-border-theme {
+            border-color: #002557 !important
+        }
+        
+        .w3-hover-theme:hover {
+            color: #fff !important;
+            background-color: #002557 !important
+        }
+        
+        .w3-hover-text-theme:hover {
+            color: #002557 !important
+        }
+        
+        .w3-hover-border-theme:hover {
+            border-color: #002557 !important
+        }
+    </style>
+    <title>TSN Configurator</title>
+    {%block scripts %} {% endblock %}
+</head>
+
+<body>
+
+    <header>
+        <div class="w3-bar w3-border w3-large w3-theme" height="40px">
+            <span class="w3-bar-item">TSN Configurator</span>
+            <div class="topnav" id="myTopnav"><a href="/" class="w3-bar-item w3-button">Home</a>{% block navigator %} {% endblock %}
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars fa-lg"></i>
+                </a>
+            </div>
+            <span class="w3-bar-item w3-right"><img class="logotu" alt="self-Logo" src="{{ url_for('static', filename='TU_Dresden_Logo_weiss.svg') }}" height="40px"></span>
+        </div>
+    </header>
+    <article>
+        {% block content %}{% endblock %}
+    </article>
+    <footer>&copy; TUD - Institute of Applied Computer Science</footer>
+
+</body>
+<script>
+    /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>

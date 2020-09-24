@@ -1,0 +1,9 @@
+{% extends "base.html" %} {% block navigator %}
+<a class="w3-bar-item w3-button" href="/engineering">Configurations</a>
+<a class="w3-bar-item w3-button" href="">New Configuration</a>
+<a class="w3-bar-item w3-button" href="/engineering/yang">YANG Models</a> {% endblock %}{% block content %}
+<h2>Implemented YANG-Models</h2>
+<div class="centered-box">
+    <a href="{{ url_for('static', filename='html/TNsysrepo.html') }}">Trust Node FPGA</a>
+</div>
+{% endblock %}

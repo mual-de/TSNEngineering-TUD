@@ -1,0 +1,25 @@
+{% extends "controller/controller_base.html" %} {% block content %}
+<h2>Switch Edit Panel</h2>
+<a href="/controlling/router/addNew" class="blue-button-href">Add new Switch</a><br>
+
+<div class="centered-box">
+    <table class="w3-table-all">
+        <tr>
+            <th>Name</th>
+            <th>IPv4</th>
+            <th>Port</th>
+            <th>DPID</th>
+            <th>Edit</th>
+        </tr>
+        {% for sw in switches %}
+        <tr>
+            <td>{{sw['name']}}</td>
+            <td>{{sw['ip']}}</td>
+            <td>{{sw['port']}}</td>
+            <td>{{sw['dpid']}}</td>
+            <td><a href="/controlling/router/edit?id={{sw[ 'id']}}" class="w3-button">edit</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "controller/controller_base.html" %} {% block content %}
+<div class="centered-box">
+    <h3> Select Configuration to deploy on NetworkController</h3>
+    <table class="w3-table-all">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th></th>
+        </tr>
+        {% for set in data %}
+        <tr>
+            <td>{{set["name"]}}</td>
+            <td>{{set["Description"]}}</td>
+            <td>2019-10-15</td>
+            <td><a href='/controlling/deployment/loadConfig?id={{set["id"]}}' class="w3-button">load</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

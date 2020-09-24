@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block navigator %}
+<a class="w3-bar-item w3-button" href="/engineering">Configurations</a>
+<a class="w3-bar-item w3-button" href="/engineering/filterRecipe">Filter Recipes</a>
+<a class="w3-bar-item w3-button" href="/engineering/yang">YANG Models</a> {% endblock %} {% block content %}
+<div class="centered-box">
+    <a href="/engineering/createNewRecipe" class="blue-button-href">Add new Filter</a><br>
+
+
+    <table class="w3-table-all">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+        {% for set in data %}
+        <tr>
+            <td>{{set["name"]}}</td>
+            <td>{{set["Description"]}}</td>
+            <td><a href='/engineering/editFilter?id={{set["id"]}}' style="w3-button">edit</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

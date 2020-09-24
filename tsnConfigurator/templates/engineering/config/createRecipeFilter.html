@@ -1,0 +1,25 @@
+{% extends "base.html" %} {% block scripts %} {% endblock %} {% block navigator %}
+<a class="w3-bar-item w3-button" href="/engineering">Configurations</a>
+<a class="w3-bar-item w3-button" href="/engineering/filterRecipe">Filter Recipes</a>
+<a class="w3-bar-item w3-button" href="/engineering/yang">YANG Models</a> {% endblock %} {% block content %}
+<h2>Create Filter Recipe</h2>
+<div class="conifg-box">
+
+    <div class="configuration-form">
+        <div class="configuration-ctl-btns">
+            <button onclick="updateConfiguration({{data['id']}})" class="w3-btn w3-theme-l1">Store Filter Recipe</button>
+        </div>
+        <div id="switch-area">
+            <h3>General Informations:</h3><br>
+            <label for="config-name"><b>Filter name:</b></label>
+            <input id="config-name" required class="w3-input" value='{{data["name"]}}'><br>
+            <b>Filter description</b><br>
+            <textarea rows="3" cols="80" required id="config-desc">{{data["description"]}}</textarea>
+        </div>
+    </div>
+
+
+</div>
+<script>
+</script>
+{% endblock %}

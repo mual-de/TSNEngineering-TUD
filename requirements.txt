@@ -1,0 +1,7 @@
+flask>=1.0.0
+pyang
+pyangbind
+sphinx
+sphinx-rtd-theme
+m2r
+coverage

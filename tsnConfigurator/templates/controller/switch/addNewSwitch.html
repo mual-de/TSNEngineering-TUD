@@ -1,0 +1,25 @@
+{% extends "controller/controller_base.html" %} {% block content %}
+<h2>{%if data != None %} Update switch dataset {%else %}Add new switch {% endif %}</h2>
+
+<div class="centered-box">
+    <form action="/controlling/router/insertNew?id={{data['id']}}" enctype="multipart/form-data" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required value="{{data['name']}}"><br>
+        <label for="uuid">UUID:</label>
+        <input type="text" name="uuid" required value="{{data['uuid']}}"><br>
+        <label for="ip">IPv4:</label>
+        <input type="text" name="ip" required value="{{data['ip']}}"><br>
+        <label for="port">Port:</label>
+        <input type="text" name="port" required value="{{data['port']}}"><br>
+        <label for="username">Username:</label>
+        <input type="text" name="username" required value="{{data['username']}}"><br>
+        <label for="password">Password:</label>
+        <input type="text" name="password" required value="{{data['password']}}"><br>
+        <label for="dpid">Datapath ID:</label>
+        <input type="text" name="dpid" required value="{{data['dpid']}}"><br>
+        <label for="devicetype">Devicetype:</label>
+        <input type="text" name="devicetype" value="{{data['devicetype']}}"><br>
+        <button type="submit">{%if data != None %} Update switch dataset {%else %}Add switch to controller {% endif %}</button>
+    </form>
+</div>
+{% endblock %}
